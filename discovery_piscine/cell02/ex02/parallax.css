@@ -1,0 +1,41 @@
+html {
+    font-family: monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 200vh;
+    overflow-x: hidden;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+#section1 {
+    background: url('https://virtualbackgrounds.site/wp-content/uploads/2020/07/windows-xp-wallpaper-bliss.jpg') 
+    center/cover;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+}
+
+#section2 {
+    background: black;
+}
+
+#section3 {
+    background: url('https://i.redd.it/wwk2t0dgfcm21.png') 
+    center/cover;
+    background-repeat:  no-repeat;
+    background-attachment:  fixed;
+}
