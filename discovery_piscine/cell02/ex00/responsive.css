@@ -18,3 +18,11 @@ table, th {
 th {
     padding: 30px;
 }
+
+#cell1 {
+    background: orange;
+}
+
+#cell2 {
+    background: #0099ff;
+}
