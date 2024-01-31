@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon</title>
+    <style>
+        div {
+            background: red;
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="balloon" 
+    id="balloon" 
+    onclick="clicking()"
+    onmouseover="hover()"></div>
+</body>
+
+<script>
+    let incolor = 1
+    let size_init = 200 
+    let size_step = 10
+
+    let ballon = document.getElementById('balloon')
+
+    function clicking() {
+        size_init += size_step
+        incolor++;
+
+        if (incolor <= 3) {
+            if (incolor == 2) {
+                ballon.style.backgroundColor = "green"
+            }
+            else if (incolor == 3) {
+                ballon.style.backgroundColor = "blue"
+            }
+        }
+        else {
+            incolor = 1
+            ballon.style.backgroundColor = "red"
+        }
+
+        if (size_init > 420 ) {
+            size_init = 200
+            balloon.style.width = `${size_init}px`
+            balloon.style.height = `${size_init}px`
+        }
+        else {
+            balloon.style.width = `${size_init}px`
+            balloon.style.height = `${size_init}px`
+        }
+        
+    }
+
+    function hover() {
+        console.log("Kuay")
+        if (incolor == 1) {
+            incolor = 3;
+            ballon.style.backgroundColor = "blue"
+        }
+        else {
+            incolor--;
+            if (incolor == 1) {
+                ballon.style.backgroundColor = "red"
+            }
+            else if (incolor == 2) {
+                ballon.style.backgroundColor = "green"
+            }
+        }
+        
+        
+        balloon.style.width = `${size_init-5}px`
+        balloon.style.height = `${size_init-5}px`
+    }
+</script>
+</html>
