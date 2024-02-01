@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-2</title>
+    <style>
+        body {
+            font-family: monospace;
+        }
+        h1 {
+            text-align: center;
+        }
+        div {
+            width: fit-content;
+            height: fit-content;
+            margin: auto;
+        }
+        input {
+            width: 100px;
+            height: 30px;
+            font-size: 30px;
+            padding: 10px;
+        }
+        select {
+            font-size: 30px;
+            padding: 10px;
+            width: fit-content;
+        }
+        button {
+            width: 100px;
+            height: 30px;
+            background: #000;
+            color: white;
+            font-size: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CALCULATOR</h1>
+    <div>
+        <form class="card" id="calu">
+            <input type="number" name="first" value="0" id="int1" required>
+            <select name="operations" id="op">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="x">x</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="number" name="sec" value="0" id="int2" required>
+            <div>
+                <button type="submit" id="sub-butt">Try me!</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+    // I want to learn some arrow func
+    const int1 = document.getElementById("int1");
+    const int2 = document.getElementById("int2");
+    const op = document.getElementById("op");
+    const calu = document.getElementById("calu");
+
+    // setInterval is TimerHandler to make somethings in time
+    setInterval(() => {
+        //alert "Pls, use me..."
+        alert("Please, use me...");
+    }, 30000);
+
+    calu.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const value1 = int1.value;
+        const value2 = int2.value;
+        const opar = op.value;
+        //check < 0
+        if (value1 < 0 || value2 < 0) {
+          alert("Error :(");
+          console.log("Error :( Value must >= 0");
+          return;
+        }
+        //check divide op
+        if ((opar == "/" || opar == "%") && (value1 == 0 || value2 || 0)) {
+          alert("It's over 9000!");
+          console.log("It's over 9000!");
+          return;
+        }
+
+        // eval() is make string to return result of its
+        alert("Result : " + eval(`${value1} ${opar} ${value2}`));
+        console.log("Result : " + eval(`${value1} ${opar} ${value2}`));
+    });
+</script>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balloon</title>
+    <title>3-1</title>
     <style>
         div {
             background: red;
@@ -11,6 +11,7 @@
             height: 200px;
             border-radius: 100%;
             margin: auto;
+            transition: all 0.125s;
         }
     </style>
 </head>
@@ -19,7 +20,8 @@
     <div class="balloon" 
     id="balloon" 
     onclick="clicking()"
-    onmouseover="hover()"></div>
+    onmouseover="hover()"
+    onmouseleave="leaves()"></div>
 </body>
 
 <script>
@@ -57,9 +59,9 @@
         }
         
     }
-
+    
     function hover() {
-        console.log("Kuay")
+        console.log("test")
         if (incolor == 1) {
             incolor = 3;
             ballon.style.backgroundColor = "blue"
@@ -74,9 +76,38 @@
             }
         }
         
+        if (size_init-5 >= 200) {
+            size_init -= 5
+            balloon.style.width = `${size_init}px`
+            balloon.style.height = `${size_init}px`
+        }
+    }
+    
+    function leaves() {
+        if (incolor == 3) {
+            incolor = 1;
+            ballon.style.backgroundColor = "red"
+        }
+        else {
+            incolor++;
+            if (incolor == 2) {
+                ballon.style.backgroundColor = "green"
+            }
+            else if (incolor == 3) {
+                ballon.style.backgroundColor = "blue"
+            }
+        }
         
-        balloon.style.width = `${size_init-5}px`
-        balloon.style.height = `${size_init-5}px`
+        if (size_init <= 415){
+            size_init += 5
+            balloon.style.width = `${size_init}px`
+            balloon.style.height = `${size_init}px`
+        }
+        else {
+            size_init = 200
+            balloon.style.width = `${size_init}px`
+            balloon.style.height = `${size_init}px`
+        }
     }
 </script>
 </html>
