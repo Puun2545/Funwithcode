@@ -3,9 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
     <title>Resume2</title>
 </head>
 <body>
-    
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skill">Skill</a></li>
+            <li><a href="#event">Event</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+    </nav>
+    <div class="section" id="home">
+        <div>
+            <h1>Puun Vachangnern</h1>
+            <h2>I'm Junior Network Engineer</h2>
+            <div class="contact">
+                <img src="-" alt="github">
+                <img src="-" alt="facebook">
+                <img src="-" alt="linkin">
+            </div>
+        </div>
+    </div>
+    <div class="section" id="about">
+        <div class="about-con">
+            <h1>About</h1>
+            <p>I’m currently a third-year student majoring in Information Technology, specializing in Network and Infrastructure Systems. My keen interests lie in Cybersecurity, Network Engineering, Cloud Computing, and DevSecOps Development. I possess a strong ability to learn new concepts and thrive in collaborative team environments.</p>
+        </div>
+        <div class="info-con">
+            <img src="./Asset/profile_pic.jpg" alt="profilepic">
+            <div class="user-info">
+                <h2>Puun Vachangnern</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem a,</p>
+                <ul>
+                    <li><strong>Birthday:</strong> August 2, 2002</li>
+                    <li><strong>Age:</strong> 21 years</li>
+                    <li><strong>Phone:</strong> +66 0999079193</li>
+                    <li><strong>Email:</strong> puun.vach@gmail.com</li>
+                    <li><strong>Education:</strong> Bachelor's Degree in Information Technology</li>
+                </ul>
+            </div>
+        </div>
+        <div class="inter-con">
+            <h2>My Interests</h2>
+            <div class="inter-img-con">
+                <div class="img-con">
+                    <img src="./Asset/cloud_pic.jpg" alt="cloud-computing">
+                    <label for="cloud-computing">Cloud</label>
+                </div>
+                <div class="img-con">
+                    <img id="devops" src="./Asset/DevOps.jpg" alt="DevSecOps">
+                    <label for="DevSecOps">DevSecOps</label>
+                </div>
+                <div class="img-con">
+                    <img src="./Asset/CyberSecure.png" alt="Cybersecurity">
+                    <label for="Cybersecurity">Cybersecurity</label>
+                </div>
+                <div class="img-con">
+                    <img src="./Asset/R.jpg" alt="Network">
+                    <label for="Network">Network Infra</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="skill">
+        <div class="about-con">
+            <h1>Skills</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta amet aliquid eum sequi necessitatibus! Vero delectus odio repellendus iure? Eaque laborum voluptatibus itaque expedita quia sequi, minus aliquam soluta. Corrupti?</p>
+        </div>
+        <div class="skill-con popup-trigger">
+            <div class="category">
+                <h2>Technical Skills</h2>
+                <ul>
+                  <li class="popup-trigger">DevSecOps Skill</li>
+                  <li class="popup-trigger">Network Engineering Skill</li>
+                  <li class="popup-trigger">Programming Skill</li>
+                  <li class="popup-trigger">Compute-OS Skill</li>
+                  <li class="popup-trigger">Cloud Skill</li>
+                </ul>
+              </div>
+              <div class="category">
+                <h2>Soft Skills</h2>
+                <ul>
+                  <li class="popup-trigger">Communication Skill</li>
+                  <li class="popup-trigger">Problem-solving Skill</li>
+                  <li class="popup-trigger">Management Skill</li>
+                </ul>
+              </div>
+        </div>
+    </div>
+    <div class="section" id="event"></div>
+    <div class="section contact" id="contact"></div>
 </body>
 </html>

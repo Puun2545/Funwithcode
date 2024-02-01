@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: monospace, sans-serif;
+    height: 200vh;
+    background-color: #fff;
+    transition: filter 0.3s ease;
+    /* background-color: #555; */
+}
+
+body.darken {
+    filter: grayscale(80%);
+    /* Apply grayscale filter to darken the main page */
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #444;
+    text-align: center;
+    position: fixed;
+    transition: all linear 0.4s;
+}
+
+.navbar ul li {
+    display: inline-block;
+    /* Display the list items in-line */
+}
+
+.navbar ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar ul li a:hover {
+    background-color: #111;
+
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    background: white;
+    margin: 0;
+    padding: 0;
+}
+
+#home {
+    background: url(./Asset/cover_pic.jpg) center/cover no-repeat fixed;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#about {
+    display: block;
+    padding-top: 30px;
+}
+
+#skill {
+    display: block;
+    padding-top: 30px;
+}
+
+.about-con {
+    margin: 10px 60px;
+    max-width: 80%;
+}
+
+.about-con h1 {
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.info-con {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.info-con img {
+    width: 300px;
+    height: 322px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    max-width: 700px;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-info h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 30px;
+    color: #333;
+}
+
+.user-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.user-info ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.user-info ul li strong {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.inter-con {
+    margin: 10px 60px;
+}
+
+.inter-con img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.inter-con h2 {
+    margin: 0;
+}
+
+#devops {
+    object-fit: contain;
+    object-position: center;
+}
+
+.inter-img-con {
+    display: flex;
+}
+
+.img-con {
+    display: inline-grid;
+    text-align: center;
+    margin: 0px 20px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.skill-con {
+    max-width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.category {
+    width: 50%;
+    margin-bottom: 20px;
+    padding: 40px;
+}
+
+.category h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.category ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.category ul li::before {
+    content: "•";
+    color: #4CAF50;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+

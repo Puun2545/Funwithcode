@@ -1,0 +1,10 @@
+body {
+    transition: all linear 0.15s;
+    background: white;
+    font-family: monospace;
+}
+
+button {
+    font-size: 32px;
+    padding: 10px;
+}
