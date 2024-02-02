@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>KWANGSAP</title>
+  </head>
+  <body >
+    <nav
+      class="w-full p-4 px-20 fixed top-0 flex justify-between items-center bg-white/25 shadow backdrop-blur"
+    >
+      <p class="text-xl font-bold hidden md:block">KWANGSAP</p>
+      <div class="flex text-lg gap-6 items-center">
+        <a href="#profile" class="px-2 py-1 rounded transition hover:bg-slate-100/70"> Profile </a>
+        <a href="#skill" class="px-2 py-1 rounded transition hover:bg-slate-100/70"> Skill </a>
+        <a href="#contact" class="px-2 py-1 rounded transition hover:bg-slate-100/70"> Contact </a>
+      </div>
+    </nav>
+    <section class="w-full h-dvh" id="profile">
+      <div
+        class="w-full h-full flex gap-4 justify-center items-center flex-col md:flex-row"
+      >
+        <div>
+          <img
+            src="./static/profile.jpg"
+            alt=""
+            class="w-60 rounded border shadow"
+          />
+        </div>
+        <div>
+          <p class="text-6xl font-bold">Hello, I'm</p>
+          <p class="text-6xl font-bold">KWANGSAP</p>
+          <p class="text-2xl font-bold">Full-stack Developer</p>
+        </div>
+      </div>
+    </section>
+    <section
+      class="w-full min-h-dvh flex md:justify-center items-center flex-col gap-4"
+      id="skill"
+    >
+      <p class="text-5xl font-bold">Skill & Project</p>
+      <div class="flex flex-col md:flex-row w-full gap-4 p-4 md:px-20">
+        <div class="rounded border shadow w-full p-4">
+          <p class="text-2xl font-bold">KMITL +</p>
+          <div class="w-full flex justify-center">
+            <img src="./static/KMITL+.PNG" class="w-10/12" alt="" srcset="" />
+          </div>
+          <p>
+            This Chrome extension, KMITL +, was created with the purpose of
+            redesigning the study schedule and exam table for students at KMITL.
+            Built using Vite, Svelte, and Tailwind, KMITL + offers a sleek and
+            modern interface that is both user-friendly and intuitive. With this
+            extension, students can easily organize their study schedule and
+            keep track of important exam dates. The use of Tailwind ensures that
+            the design is both aesthetically pleasing and responsive, providing
+            a seamless experience for users.
+          </p>
+          <div class="flex justify-end underline text-orange-500">
+            <a
+              href="https://chromewebstore.google.com/detail/kmitl-+/ncphjhlpemjmalmkijackkmefhnjmgop"
+              >Try it</a
+            >
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 w-full">
+          <div class="flex-1 rounded border shadow w-full p-4">
+            <p class="text-2xl font-bold">Expertise</p>
+            <div class="grid grid-cols-4 grid-rows-2 gap-4 p-4">
+              <div class="flex flex-col justify-center text-center">
+                <img
+                  src="./static/logo/nodejs.png"
+                  class="h-full aspect-square object-contain"
+                  alt="nodeJS"
+                />
+                <p>NodeJS</p>
+              </div>
+              <div class="flex flex-col justify-center text-center">
+                <img
+                  src="./static/logo/tailwind.png"
+                  class="h-full aspect-square object-contain"
+                  alt="nodeJS"
+                />
+                <p>TailwindCSS</p>
+              </div>
+              <div class="flex flex-col justify-center text-center">
+                <img
+                  src="./static/logo/svelte.png"
+                  class="h-full aspect-square object-contain"
+                  alt="nodeJS"
+                />
+                <p>Svelte</p>
+              </div>
+              <div class="flex flex-col justify-center text-center">
+                <img
+                  src="./static/logo/react.png"
+                  class="h-full aspect-square object-contain"
+                  alt="nodeJS"
+                />
+                <p>React</p>
+              </div>
+              <div class="flex flex-col justify-center text-center">
+                <img
+                  src="./static/logo/vue.png"
+                  class="h-full aspect-square object-contain"
+                  alt="nodeJS"
+                />
+                <p>Vue</p>
+              </div>
+              <div class="flex flex-col justify-center text-center">
+                <img
+                  src="./static/logo/expressjs.png"
+                  class="h-full aspect-square object-contain"
+                  alt="nodeJS"
+                />
+                <p>Express.js</p>
+              </div>
+              <div class="flex flex-col justify-center text-center">
+                <img
+                  src="./static/logo/prisma.png"
+                  class="h-full aspect-square object-contain"
+                  alt="nodeJS"
+                />
+                <p>Prisma</p>
+              </div>
+              <div class="flex flex-col justify-center text-center">
+                <img
+                  src="./static/logo/docker.webp"
+                  class="h-full aspect-square object-contain"
+                  alt="nodeJS"
+                />
+                <p>Docker</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-1 rounded border shadow w-full p-4">
+            <p class="text-2xl font-bold">Soft-skill</p>
+            <ul class="list-disc px-4">
+              <li>Problem solving</li>
+              <li>Critical thinking</li>
+              <li>Flexibility</li>
+              <li>Teamwork</li>
+              <li>Creativity</li>
+              <li>Self Learning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="w-full h-dvh flex justify-center items-center flex-col gap-4"
+      id="contact"
+    >
+      <p class="text-6xl font-bold">Contact</p>
+      <a class="text-4xl cursor-pointer transition hover:-translate-y-1" href="https://github.com/t0ngk">Github</a>
+      <a class="text-4xl cursor-pointer transition hover:-translate-y-1" href="https://www.instagram.com/t0ng.k/">Instargram</a>
+      <a class="text-4xl cursor-pointer transition hover:-translate-y-1" href="https://twitter.com/t0ng_k">X (Twitter)</a>
+      <a class="text-4xl cursor-pointer transition hover:-translate-y-1" href="mailto:t0ng.k.dev@gmail.com">Email</a>
+    </section>
+  </body>
+</html>

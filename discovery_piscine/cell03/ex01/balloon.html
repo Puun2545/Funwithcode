@@ -11,103 +11,68 @@
             height: 200px;
             border-radius: 100%;
             margin: auto;
-            transition: all 0.125s;
+            transition: all  linear 0.125s;
         }
     </style>
 </head>
 
 <body>
-    <div class="balloon" 
-    id="balloon" 
-    onclick="clicking()"
-    onmouseover="hover()"
-    onmouseleave="leaves()"></div>
+    <div class="balloon" id="balloon"></div>
 </body>
 
 <script>
-    let incolor = 1
-    let size_init = 200 
-    let size_step = 10
-
-    let ballon = document.getElementById('balloon')
-
-    function clicking() {
-        size_init += size_step
-        incolor++;
-
-        if (incolor <= 3) {
-            if (incolor == 2) {
-                ballon.style.backgroundColor = "green"
-            }
-            else if (incolor == 3) {
-                ballon.style.backgroundColor = "blue"
-            }
-        }
-        else {
-            incolor = 1
-            ballon.style.backgroundColor = "red"
-        }
-
-        if (size_init > 420 ) {
-            size_init = 200
-            balloon.style.width = `${size_init}px`
-            balloon.style.height = `${size_init}px`
-        }
-        else {
-            balloon.style.width = `${size_init}px`
-            balloon.style.height = `${size_init}px`
-        }
-        
-    }
+    const balloon = document.getElementById("balloon");
+    let size = 200;
+    console.log(size);
+    let click = 0;
+    let colors = ['red', 'green', 'blue'];
     
-    function hover() {
-        console.log("test")
-        if (incolor == 1) {
-            incolor = 3;
-            ballon.style.backgroundColor = "blue"
-        }
-        else {
-            incolor--;
-            if (incolor == 1) {
-                ballon.style.backgroundColor = "red"
-            }
-            else if (incolor == 2) {
-                ballon.style.backgroundColor = "green"
-            }
-        }
-        
-        if (size_init-5 >= 200) {
-            size_init -= 5
-            balloon.style.width = `${size_init}px`
-            balloon.style.height = `${size_init}px`
-        }
+    const setSize = (size) => {
+        //ไม่ให้น้อยกว่า หรือ มากกว่า ค่าที่กำหนด
+        const newSize = Math.min(Math.max(size, 200), 420);
+        balloon.style.width = `${newSize}px`;
+        balloon.style.height = `${newSize}px`;
     }
-    
-    function leaves() {
-        if (incolor == 3) {
-            incolor = 1;
-            ballon.style.backgroundColor = "red"
+
+    balloon.addEventListener("click", () => {
+        if (size < 420) {
+            //increse size
+            size += 10;
+            setSize(size);
         }
         else {
-            incolor++;
-            if (incolor == 2) {
-                ballon.style.backgroundColor = "green"
+            // reset size
+            size = 200;
+            setSize(size);
+        };
+        click = (click + 1)%3;
+        console.log("click :" + colors[click]);
+        balloon.style.backgroundColor = colors[click];
+    });
+
+    balloon.addEventListener("mouseover", () => {
+        if (size-5 >= 200) {
+            size -= 5;
+            setSize(size);
+            if (click - 1 < 0) {
+                click = 3;
+                // console.log(click);
+                balloon.style.backgroundColor = colors[(click - 1)%3];
             }
-            else if (incolor == 3) {
-                ballon.style.backgroundColor = "blue"
-            }
-        }
-        
-        if (size_init <= 415){
-            size_init += 5
-            balloon.style.width = `${size_init}px`
-            balloon.style.height = `${size_init}px`
+            else {
+                // console.log(click);
+                balloon.style.backgroundColor = colors[(click - 1)%3];
+            };
         }
         else {
-            size_init = 200
-            balloon.style.width = `${size_init}px`
-            balloon.style.height = `${size_init}px`
-        }
-    }
+            return;
+        };
+    });
+
+    balloon.addEventListener("mouseleave", () => {
+        console.log("3 : " + click);
+        balloon.style.backgroundColor = colors[click];
+    });
+
 </script>
 </html>
