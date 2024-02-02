@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
             height: 200px;
             border-radius: 100%;
             margin: auto;
-            transition: all  linear 0.125s;
+            transition: all linear 0.125s;
         }
     </style>
 </head>
@@ -21,58 +22,48 @@
 </body>
 
 <script>
-    const balloon = document.getElementById("balloon");
-    let size = 200;
-    console.log(size);
-    let click = 0;
-    let colors = ['red', 'green', 'blue'];
-    
-    const setSize = (size) => {
-        //ไม่ให้น้อยกว่า หรือ มากกว่า ค่าที่กำหนด
-        const newSize = Math.min(Math.max(size, 200), 420);
-        balloon.style.width = `${newSize}px`;
-        balloon.style.height = `${newSize}px`;
-    }
+    document.addEventListener("DOMContentLoaded", function () {
+        let size = 200;
+        let click = 0;
+        let colors = ['red', 'green', 'blue'];
 
-    balloon.addEventListener("click", () => {
-        if (size < 420) {
-            //increse size
-            size += 10;
-            setSize(size);
-        }
-        else {
-            // reset size
-            size = 200;
-            setSize(size);
+        const balloon = document.getElementById("balloon");
+
+        const setSize = (size) => {
+            balloon.style.width = `${size}px`;
+            balloon.style.height = `${size}px`;
         };
-        click = (click + 1)%3;
-        console.log("click :" + colors[click]);
-        balloon.style.backgroundColor = colors[click];
-    });
 
-    balloon.addEventListener("mouseover", () => {
-        if (size-5 >= 200) {
-            size -= 5;
-            setSize(size);
-            if (click - 1 < 0) {
-                click = 3;
-                // console.log(click);
-                balloon.style.backgroundColor = colors[(click - 1)%3];
+        // Click event
+        balloon.addEventListener("click", function () {
+            if (size <= 410) {
+                size += 10;
+                setSize(size);
+            } else {
+                size = 200;
+                setSize(size);
             }
-            else {
-                // console.log(click);
-                balloon.style.backgroundColor = colors[(click - 1)%3];
-            };
-        }
-        else {
-            return;
-        };
+            click = (click + 1) % 3;
+            balloon.style.backgroundColor = colors[click];
+        });
+
+        // Mouse leave event
+        balloon.addEventListener("mouseleave", function () {
+            if (size - 5 >= 200) {
+                size -= 5;
+                setSize(size);
+            }
+            click -= 1;
+            if (click < 0) {
+                click = 2;
+                balloon.style.backgroundColor = colors[2];
+            } else {
+                balloon.style.backgroundColor = colors[(click) % 3];
+            }
+        });
     });
 
-    balloon.addEventListener("mouseleave", () => {
-        console.log("3 : " + click);
-        balloon.style.backgroundColor = colors[click];
-    });
 
 </script>
+
 </html>

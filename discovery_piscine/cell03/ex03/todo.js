@@ -1,20 +1,25 @@
-let list = ["Test", "Real"];
+let list = [];
 const toDoEl = document.getElementById("ft_list");
 const addButt = document.getElementById("addButt");
 
-//append child to 
+// Append child to 
 const render = () => {
   toDoEl.innerHTML = "";
   list.forEach((value, index) => {
     const toDoItem = createTodoElement(value);
     toDoItem.addEventListener("click", () => {
-      removeTodo(index);
+      var answer = confirm("Delete?");
+      if (answer) {
+        removeTodo(index);
+      } else {
+        return;
+      }
     });
     toDoEl.appendChild(toDoItem);
   });
 };
 
-//Create new element adding class todoItem
+// Create new element adding class todoItem
 const createTodoElement = (value) => {
   const button = document.createElement("button");
   button.classList.add("todoItem");
@@ -22,52 +27,49 @@ const createTodoElement = (value) => {
   return button;
 };
 
-//add todo to JSON and render()
+// Add todo to list and render()
 const addTodo = (value) => {
   list.push(value);
   updateCookie(JSON.stringify(list));
-  console.log(JSON.stringify(list));
   render();
 };
 
-//remove todo from JSON and render()
+// Remove todo from list and render()
 const removeTodo = (index) => {
   list.splice(index, 1);
   updateCookie(JSON.stringify(list));
-  console.log(JSON.stringify(list));
   render();
 };
 
-//update cookie by using setCookie Build-in function
+// Update cookie
 const updateCookie = (value) => {
-  setCookie("toDo", value);
+  setCookie("toDo", encodeURIComponent(value));
 };
 
-// returned cookies that saved
+// Set cookie
 const setCookie = (key, value) => {
-  document.cookie = `${key} = ${value};`;
+  document.cookie = `${key}=${value};`;
 };
 
-//split cookie to list and loop 
+// Get cookie
 const getCookie = (key) => {
   const cookies = document.cookie.split(";");
 
   for (let i = 0; i < cookies.length; i++) {
-    const cookie = cookies[i];
-    // trimed the key & '='
-    if (cookie.startsWith(key + "=")) return cookie.substring(key.length + 1);
-    return null;
+    const cookie = cookies[i].trim();
+    if (cookie.startsWith(`${key}=`)) return decodeURIComponent(cookie.substring(key.length + 1));
   }
+  return null;
 };
 
-//onclick addButt show prompt input and adding input by addTodo()
+// Add event listener to add button
 addButt.addEventListener("click", () => {
   const newTodo = prompt("New ToDo");
-  if (newTodo.trim().length <= 0) return;
-  addTodo(newTodo);
+  if (!newTodo || newTodo.trim().length <= 0) return;
+  addTodo(newTodo.trim());
 });
 
-//get all oldTodo in cookies and write th JSON
+// Get old todos from cookies and render
 const oldToDo = getCookie("toDo");
 if (oldToDo) {
   list = JSON.parse(oldToDo);

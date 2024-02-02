@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>3-2</title>
+    <style>
+        body {
+            font-family: monospace;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        div {
+            width: fit-content;
+            height: fit-content;
+            margin: auto;
+        }
+
+        input {
+            width: 100px;
+            height: 30px;
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        select {
+            font-size: 30px;
+            padding: 10px;
+            width: fit-content;
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            background: #000;
+            color: white;
+            font-size: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CALCULATOR</h1>
+    <div>
+        <form class="card" id="calu">
+            <input type="number" name="first" value="0" id="int1" required>
+            <select name="operations" id="op">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="x">x</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="number" name="sec" value="0" id="int2" required>
+            <div>
+                <button type="submit" id="sub-butt">Try me!</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    // Select elements using jQuery
+    const int1 = $("#int1");
+    const int2 = $("#int2");
+    const op = $("#op");
+    const calu = $("#calu");
+
+    // setInterval is TimerHandler to make somethings in time
+    setInterval(() => {
+        // Alert "Pls, use me..."
+        alert("Please, use me...");
+    }, 30000);
+
+    // Event listener for form submission using jQuery
+    calu.submit((event) => {
+        event.preventDefault();
+        const value1 = int1.val();
+        const value2 = int2.val();
+        const opar = op.val();
+
+        // Check if the values are less than 0
+        if (value1 < 0 || value2 < 0) {
+            alert("Error :(");
+            return;
+        }
+        // Check for division by 0
+        if ((opar == "/" || opar == "%") && (value1 == 0 || value2 == 0)) {
+            alert("It's over 9000!");
+            console.log("It's over 9000!");
+            return;
+        }
+
+        // Evaluate the expression and display the result
+        const result = eval(`${value1} ${opar} ${value2}`);
+        alert("Result : " + result);
+        console.log("Result : " + result);
+    });
+</script>
+
+</html>
