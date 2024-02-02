@@ -1,8 +1,0 @@
-const button = document.getElementById("button")
-        const body = document.getElementById("body")
-        const text = document.getElementById("debug")
-        button.setAttribute("class", `button${i}`)
-        body.setAttribute("class", `bg${i}`)
-        text.innerHTML = `${i}`
-        if (i < 2) {
-            i++
