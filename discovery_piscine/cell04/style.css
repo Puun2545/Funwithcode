@@ -27,6 +27,7 @@ p {
     font-weight: 100;
 }
 
+
 .navbar ul {
     list-style-type: none;
     margin: 0;
@@ -36,6 +37,8 @@ p {
     text-align: center;
     position: fixed;
     transition: all linear 0.4s;
+    z-index: 99999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .navbar ul li {
@@ -57,10 +60,10 @@ p {
 
 .section {
     height: 100vh;
-    display: flex;
     background: white;
+    display: block;
+    padding-top: 30px;
     margin: 0;
-    padding: 0;
 }
 
 #home {
@@ -68,18 +71,40 @@ p {
     color: #fff;
     justify-content: center;
     align-items: center;
+    display: flex;
+    padding-top: 0;
 }
 
-
-#about {
-    display: block;
-    padding-top: 30px;
+#contact {
+    padding: 30px;
+    height: 20vh;
+    background-color: #222;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    display: flex;
 }
 
-#skill {
-    display: block;
-    padding-top: 30px;
+#contact h2 {
+    margin: 0;
 }
+
+#contact ul {
+    font-size: 18px;
+}
+
+#contact img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    object-position: center ;
+    padding: 5px;
+    transition: all linear 0.1s;
+}
+
+#contact img:hover {
+    transform: scale(1.2);
+}
+
 
 .about-con {
     margin: 10px 60px;
@@ -96,7 +121,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 40px 0px;
 }
 
 .info-con img {
@@ -106,6 +131,7 @@ p {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .user-info {
     max-width: 700px;
@@ -137,19 +163,19 @@ p {
     margin-right: 5px;
 }
 
-.inter-con {
-    margin: 10px 60px;
-}
 
 .inter-con img {
     width: 200px;
     height: 200px;
     object-fit: cover;
     object-position: center;
+    transition: all linear 0.2s;
 }
+
 
 .inter-con h2 {
     margin: 0;
+    text-align: center;
 }
 
 #devops {
@@ -157,8 +183,11 @@ p {
     object-position: center;
 }
 
-.inter-img-con {
+.content-img-con {
     display: flex;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
 }
 
 .img-con {
@@ -169,9 +198,10 @@ p {
     font-size: 20px;
 }
 
+
 .skill-con {
     max-width: 80%;
-    margin: 20px auto;
+    margin: 40px auto;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -180,8 +210,7 @@ p {
 
 .category {
     width: 50%;
-    margin-bottom: 20px;
-    padding: 40px;
+    padding: 0px 40px 40px 40px;
 }
 
 .category h2 {
@@ -198,15 +227,128 @@ p {
 .category ul li {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #666;
+    color: #585858;
 }
 
 .category ul li::before {
     content: "•";
-    color: #4CAF50;
+    color: #7700ff;
     font-weight: bold;
     display: inline-block;
     width: 1em;
     margin-left: -1em;
 }
 
+.level-bar {
+    background-color: #eee;
+    height: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.level-fill {
+    height: 100%;
+    background-color: #9d48ff;
+    width: 100%;
+    /* Initially set to 0 */
+}
+
+.animate {
+    animation: fillAnimation 1s ease forwards;
+}
+
+@keyframes fillAnimation {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+
+.tool-con img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    object-position: center;
+    padding: 0 10px;
+    transition: all linear 0.1s;
+}
+
+.tool-con img:hover {
+    transform: scale(1.3);
+}
+
+.tool-con h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#event h1 {
+    text-align: center;
+    margin:40px;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: fit-content;
+    margin: auto;
+}
+
+.slideshow-container img {
+    border-radius: 10px;
+    width: 50em;
+    height: 42em;
+    object-position: center;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgb(136, 136, 136) ;
+}
+
+.slide {
+    display: block;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all linear 0.2s;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.slide-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+  }
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    /* Adjust styles for tablets and smaller screens */
+    .slideshow-container {
+      max-width: 80%; /* Adjust as needed */
+    }
+}
